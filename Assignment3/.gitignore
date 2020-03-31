@@ -14,4 +14,3 @@ f_cost.txt
 *.graph
 CATKIN_IGNORE
 *.so
-*.png
