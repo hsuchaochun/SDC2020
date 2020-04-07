@@ -1,0 +1,1 @@
+docker build --rm --no-cache -t sdc2020:latest .
