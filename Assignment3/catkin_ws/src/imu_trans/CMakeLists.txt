@@ -135,7 +135,7 @@ include_directories(${EIGEN3_INCLUDE_DIRS})
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/imu_trans_node.cpp)
-add_executable(hw3_0851924 src/imu_data_process.cpp)
+add_executable(hw3_node src/imu_data_process.cpp)
 
 
 ## Rename C++ executable without prefix
@@ -147,8 +147,8 @@ add_executable(hw3_0851924 src/imu_data_process.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(hw3_0851924 sensor_msgs_generate_messages_cpp)
-  target_link_libraries(hw3_0851924
+add_dependencies(hw3_node sensor_msgs_generate_messages_cpp)
+  target_link_libraries(hw3_node
     ${catkin_LIBRARIES}
   )
 
