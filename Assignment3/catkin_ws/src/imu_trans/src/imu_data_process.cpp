@@ -31,12 +31,12 @@ void imu_data_callBack(const sensor_msgs::Imu::ConstPtr& msg){
         c = Eigen::Matrix3d::Identity();
         sg = Eigen::Vector3d::Zero();
         vg = Eigen::Vector3d::Zero();
-        last_time = (double)ros::Time::now().toNSec()/1E9;
+        last_time = (double)(msg->header.stamp.toNSec())/1E9;
         return;
     }
 
-    double delta_t = (double)ros::Time::now().toNSec()/1E9 - last_time;
-    last_time = (double)ros::Time::now().toNSec()/1E9;
+    double delta_t = (double)(msg->header.stamp.toNSec())/1E9 - last_time;
+    last_time = (double)(msg->header.stamp.toNSec())/1E9;
     // ROS_INFO("Imu Seq: [%d]", msg->header.seq);
     // ROS_INFO("Imu Orientation x: [%f], y: [%f], z: [%f], w: [%f]", msg->orientation.x, msg->orientation.y, msg->orientation.z, msg->orientation.w);
     // ROS_INFO("Imu Angular velocity x: [%f], y: [%f], z: [%f]", msg->angular_velocity.x, msg->angular_velocity.y, msg->angular_velocity.z);
